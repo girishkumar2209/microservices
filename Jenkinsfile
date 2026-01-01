@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
-                echo "Building Docker image: vinayvinnu24/adservice:v1"
-                sh "docker build -t vinayvinnu24/adservice:v1 ."
+                echo "Building Docker image: girish071/adservice:v1"
+                sh "docker build -t girish071/adservice:v1 ."
             }
         }
 
@@ -14,7 +14,7 @@ pipeline {
                 echo "Pushing Docker image to Docker Hub"
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred') {
-                        sh "docker push vinayvinnu24/adservice:v1 "
+                        sh "docker push girish071/adservice:v1 "
                     }
                 }
             }
